@@ -79,7 +79,6 @@ class Property(models.Model):
                 property.garden_area = 0
                 property.garden_orientations = ''
 
-
     def action_cancel(self):
         for rec in self:
             if rec.state == 'cancelled':
