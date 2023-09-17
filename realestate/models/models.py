@@ -37,7 +37,6 @@ class Property(models.Model):
         ('cancelled', 'Cancelled'),
         ('sold', 'Sold'),
     ], default='new')
-
     property_type_id = fields.Many2one('realestate.property.type', string='Property Type')
     property_tags_ids = fields.Many2many('realestate.property.tag', string='Property Tags')
     salesman = fields.Many2one('res.users', default=lambda self: self.env.user)
