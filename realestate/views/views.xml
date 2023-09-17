@@ -22,20 +22,6 @@
         </tree>
       </field>
     </record>
-    
-    <record model="ir.ui.view" id="property_offer_view_tree">
-      <field name="name">realestate.property.offer.tree</field>
-      <field name="model">realestate.property.offer</field>
-      <field name="priority" eval="16"/>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="property_id" />
-          <field name="partner_id" />
-          <field name="price" />
-          <field name="deadline_date" />
-        </tree>
-      </field>
-    </record>
 
     <record model="ir.ui.view" id="property_view_map">
       <field name="name">realestate.property.map</field>
@@ -242,6 +228,20 @@
             </group>
           </sheet>
         </form>
+      </field>
+    </record>
+        
+    <record model="ir.ui.view" id="property_offer_view_tree">
+      <field name="name">realestate.property.offer.tree</field>
+      <field name="model">realestate.property.offer</field>
+      <field name="priority" eval="16"/>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="property_id" />
+          <field name="partner_id" />
+          <field name="price" />
+          <field name="deadline_date" />
+        </tree>
       </field>
     </record>
 
