@@ -99,7 +99,7 @@ class PropertyType(models.Model):
     _description = "realestate.property.type"
 
     name = fields.Char(string='Title')
-    property_ids = fields.One2many('realestate.property', 'property_type_id', string="Properties", ondelete='cascade')
+    property_ids = fields.One2many('realestate.property', 'property_type_id', string="Properties")
     property_type_offers = fields.One2many('realestate.property.offer', 'property_type_id', string='Type offer')
     offers_count = fields.Integer(compute='_compute_type_offers')
 
@@ -136,7 +136,7 @@ class PropertyOffer(models.Model):
     _description = "realestate.property.offer"
     _rec_name = 'property_id'
 
-    property_id = fields.Many2one('realestate.property', string='Property')
+    property_id = fields.Many2one('realestate.property', string='Property', ondelete='cascade')
     partner_id = fields.Many2one('res.partner', string='Partner')
     price = fields.Float(string='Price', default=0)
     validity = fields.Integer()
