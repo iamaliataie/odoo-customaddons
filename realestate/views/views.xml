@@ -7,7 +7,7 @@
       <field name="model">realestate.property</field>
       <field name="priority" eval="16"/>
       <field name="arch" type="xml">
-        <tree decoration-success="state=='offer_accepted'" decoration-bf="state=='offer_accepted'">
+        <tree decoration-success="state=='offer_accepted'" decoration-bf="state=='offer_accepted'" sample="1">
           <field name="sequence" widget="handle"/>
           <field name="priority" widget="priority" />
           <field name="name" />
