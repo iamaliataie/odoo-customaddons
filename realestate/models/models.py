@@ -8,7 +8,7 @@ from odoo.exceptions import ValidationError, UserError
 class Property(models.Model):
     _name = 'realestate.property'
     _description = 'realestate.property'
-    _order = 'name'
+    _order = 'sequence, priority, name'
 
     name = fields.Char(string='Title')
     description = fields.Text(string='Description', help='Property Description')
@@ -44,8 +44,6 @@ class Property(models.Model):
     buyer = fields.Many2one('res.partner', default='')
 
     offers_ids = fields.One2many('realestate.property.offer', 'property_id', string='Offer')
-
-
     best_price = fields.Float(compute='_compute_best_price')
     total_area = fields.Float(compute='_compute_total_area')
     sequence = fields.Integer()
