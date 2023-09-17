@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_users_form_inherit_view" model="ir.ui.view">
+        <field name="name">view.users.form.inherit</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='preferences']" position="after">
+                <page name="real_estate_user_properties" string="Properties">
+                    <field name="property_ids">
+                        <tree>
+                            <field name="priority" widget="priority"/>
+                            <field name="name" />
+                            <field name="property_type_id" />
+                            <field name="expected_price" />
+                            <field name="state" widget="badge"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
