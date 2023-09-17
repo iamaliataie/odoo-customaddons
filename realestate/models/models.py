@@ -49,6 +49,12 @@ class Property(models.Model):
     best_price = fields.Float(compute='_compute_best_price')
     total_area = fields.Float(compute='_compute_total_area')
     sequence = fields.Integer()
+    priority = fields.Selection([
+        ('0', 'Normal'),
+        ('1', 'Low'),
+        ('2', 'Hight'),
+        ('3', 'Very Hight'),
+    ])
 
     # image = fields.Image(string='Image')
 
@@ -62,12 +68,10 @@ class Property(models.Model):
         for property in self:
             property.best_price = max(property.offers_ids.mapped(lambda x: x.price)) if property.offers_ids else 0
 
-
     @api.depends('living_area', 'garden_area')
     def _compute_total_area(self):
         for property in self:
             property.total_area = property.living_area + property.garden_area
-
 
     @api.onchange('garden')
     def _onchange_garden(self):
