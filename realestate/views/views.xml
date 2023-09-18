@@ -173,13 +173,11 @@
           <field name="bedrooms" string="Bedrooms" />
           <field name="living_area" string="Living Area" />
           <field name="facades" string="Facades" />
-
           <filter name="active" string="Active" domain="[('active', '=', 'True')]"/>
-
           <filter name="state" string="State" domain="[('state', 'in', ['new', 'offer_receiveed'])]" context="{'group_by': 'state'}" />
           <searchpanel>
             <field name="property_type_id" enable_counters="1" string="Property Types" icon="fa-list"/>
-        </searchpanel>
+          </searchpanel>
         </search>
       </field>
     </record>
