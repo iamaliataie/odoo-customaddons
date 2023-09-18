@@ -14,9 +14,13 @@
           <field name="property_type_id" />
           <field name="postcode" />
           <field name="bedrooms" />
-          <field name="salesman" widget="many2one_avatar_user" />
+          <field name="salesman" widget="many2one_avatar_user" optional="hide"/>
           <field name="property_tags_ids" widget="many2many_tags" options="{'color_field': 'color'}" />
           <field name="living_area" string="Living Area(sqm)" />
+          <field name="garage" widget="boolean_toggle" optional="hide" />
+          <field name="garden" widget="boolean_toggle" optional="hide" />
+          <field name="garden_area" string="garden Area(sqm)" optional="hide" />
+          <field name="garden_orientations" string="Garden Orientation" optional="hide" />
           <field name="expected_price" />
           <field name="selling_price" />
           <field name="date_availability" string="Available From" />
