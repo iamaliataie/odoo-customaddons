@@ -9,6 +9,7 @@ class Property(models.Model):
         invoice = self.env['account.move'].create({
             'partner_id': self.buyer.id,
             'move_type': 'out_invoice',
+            'property_id': self.id,
             'invoice_line_ids': [
                 Command.create({
                     'name': f'6% of the selling price',
@@ -35,4 +36,20 @@ class Property(models.Model):
                 'view_mode': 'form',
                 'res_model': 'account.move',
                 'res_id': rec.invoice_id.id,
+            }
+
+
+class AccountMove(models.Model):
+    _inherit = 'account.move'
+
+    property_id = fields.Many2one('realestate.property')
+
+    def open_property(self):
+        for rec in self:
+            return {
+                'name': 'Property',
+                'type': 'ir.actions.act_window',
+                'view_mode': 'form',
+                'res_model': 'realestate.property',
+                'res_id': rec.property_id.id,
             }
