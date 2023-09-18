@@ -1,18 +1,24 @@
-# -*- coding: utf-8 -*-
+from odoo import models, fields, Command
 
-# from odoo import models, fields, api
+class Property(models.Model):
+    _inherit = 'realestate.property'
 
-
-# class estate_account(models.Model):
-#     _name = 'estate_account.estate_account'
-#     _description = 'estate_account.estate_account'
-
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100
+    def action_sold(self):
+        invoice = self.env['account.move'].create({
+            'partner_id': self.buyer.id,
+            'move_type': 'out_invoice',
+            'invoice_line_ids': [
+                Command.create({
+                    'name': '6% of the selling price',
+                    'quantity': 1,
+                    'price_unit': self.selling_price * 0.06
+                }),
+                Command.create({
+                    'name': 'Administrative fees',
+                    'quantity': 1,
+                    'price_unit': 100
+                })
+            ]
+        })
+        
+        return super(Property, self).action_sold()
