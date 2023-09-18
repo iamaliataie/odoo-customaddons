@@ -3,6 +3,8 @@ from odoo import models, fields, Command
 class Property(models.Model):
     _inherit = 'realestate.property'
 
+    invoice_id = fields.Many2one('account.move')
+
     def action_sold(self):
         invoice = self.env['account.move'].create({
             'partner_id': self.buyer.id,
@@ -20,5 +22,7 @@ class Property(models.Model):
                 })
             ]
         })
-        
+
+        self.invoice_id = invoice.id
+
         return super(Property, self).action_sold()
