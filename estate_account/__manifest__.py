@@ -20,7 +20,9 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'realestate', 'account'],
+    'application': True,
+    'sequence': -9999,
 
     # always loaded
     'data': [
