@@ -225,7 +225,7 @@
                 <field name="deadline_date" attrs="{'readonly': [('state','=', 'accepted')]}" />
               </group>
               <group>
-                <field name="partner_id" attrs="{'readonly': [('state','=', 'accepted')]}" />
+                <field name="partner_id" attrs="{'readonly': [('state','=', 'accepted')]}" widget="many2one_avatar" />
                 <field name="validity" attrs="{'readonly': [('state','=', 'accepted')]}" />
                 <field name="state" invisible="1" />
               </group>
@@ -240,9 +240,9 @@
       <field name="model">realestate.property.offer</field>
       <field name="priority" eval="16"/>
       <field name="arch" type="xml">
-        <tree>
-          <field name="property_id" />
-          <field name="partner_id" />
+        <tree sample="1">
+          <field name="property_id" widget="many2one_avatar"/>
+          <field name="partner_id" widget="many2one_avatar"/>
           <field name="price" />
           <field name="deadline_date" />
         </tree>
