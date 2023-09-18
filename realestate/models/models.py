@@ -123,7 +123,6 @@ class PropertyTag(models.Model):
     _name = "realestate.property.tag"
     _description = "realestate.property.tag"
     
-    
     def _default_color(self):
         return randint(1, 11)
 
