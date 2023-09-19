@@ -53,8 +53,13 @@
           <field name="state" />
           <templates>
             <t t-name="kanban-box">
-                <div t-attf-class="oe_kanban_global_click">
+              <div t-attf-class="oe_kanban_global_click">
+                <div>
+                  <h3>
+                    <t t-out="record.name.raw_value"/>
+                  </h3>
                 </div>
+              </div>
             </t>
         </templates>
         </kanban>
