@@ -207,39 +207,38 @@
       </field>
     </record>
     
-        <!-- Property tag views -->
+    <!-- Property tag views -->
+    <record model="ir.ui.view" id="property_tag_view_tree">
+      <field name="name">realestate.property.tag.tree</field>
+      <field name="model">realestate.property.tag</field>
+      <field name="priority" eval="16"/>
+      <field name="arch" type="xml">
+        <tree sample="1">
+          <field name="name" />
+          <field name="color" widget="color_picker" />
+        </tree>
+      </field>
+    </record>
 
-        <record model="ir.ui.view" id="property_tag_view_tree">
-          <field name="name">realestate.property.tag.tree</field>
-          <field name="model">realestate.property.tag</field>
-          <field name="priority" eval="16"/>
-          <field name="arch" type="xml">
-            <tree sample="1">
-              <field name="name" />
-              <field name="color" widget="color_picker" />
-            </tree>
-          </field>
-        </record>
-    
 
-        <record id="realestate_property_tag_view_form" model="ir.ui.view">
-          <field name="name">realestate.property.tag.view.form</field>
-          <field name="model">realestate.property.tag</field>
-          <field name="arch" type="xml">
-            <form>
-              <sheet>
-                <group>
-                  <group>
-                    <field name="name" />
-                  </group>
-                  <group>
-                    <field name="color" widget="color_picker" />
-                  </group>
-                </group>
-              </sheet>
-            </form>
-          </field>
-        </record>
+    <record id="realestate_property_tag_view_form" model="ir.ui.view">
+      <field name="name">realestate.property.tag.view.form</field>
+      <field name="model">realestate.property.tag</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <group>
+                <field name="name" />
+              </group>
+              <group>
+                <field name="color" widget="color_picker" />
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
 
 
 
