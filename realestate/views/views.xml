@@ -62,11 +62,11 @@
                 <div>
                   Expected Price: <strong><t t-out="record.expected_price.raw_value"/></strong>
                 </div>
-                <div>
+                <div t-if="record.state.raw_value == 'offer_received'">
                   Best Price: <strong><t t-out="record.best_price.raw_value"/></strong>
                 </div>
-                <div>
-                  <strong><t t-out="record.selling_price.raw_value"/></strong>
+                <div t-if="record.state.raw_value == 'offer_accepted'">
+                  Selling Price: <strong><t t-out="record.selling_price.raw_value"/></strong>
                 </div>
                 <div>
                   <field name="property_tags_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
