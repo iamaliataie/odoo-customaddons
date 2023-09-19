@@ -45,15 +45,15 @@
       <field name="model">realestate.property</field>
       <field name="priority" eval="16"/>
       <field name="arch" type="xml">
-        <kanban default_group_by="property_type_id" records_draggable="0">
+        <kanban default_group_by="property_type_id" records_draggable="0" class="m-2">
           <field name="name" />
           <field name="expected_price" />
           <field name="best_price" />
           <field name="selling_price" />
           <field name="state" />
           <templates>
-            <t t-name="kanban-box">
-              <div t-attf-class="oe_kanban_global_click">
+            <t t-name="kanban-box" >
+              <div t-attf-class="oe_kanban_global_click mb16">
                 <div>
                   <h3>
                     <t t-out="record.name.raw_value"/>
