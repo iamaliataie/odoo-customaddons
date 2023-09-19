@@ -47,6 +47,10 @@
       <field name="arch" type="xml">
         <kanban>
           <field name="name" />
+          <field name="expected_price" />
+          <field name="best_price" />
+          <field name="selling_price" />
+          <field name="state" />
           <templates>
             <t t-name="kanban-box">
                 <div t-attf-class="oe_kanban_global_click">
@@ -55,7 +59,7 @@
                             <h2><field name="name"/></h2>
                         </div>
                         <div class="col-12">
-                            <strong><field name="description"/></strong>
+                            <strong><field name="expected_price"/></strong>
                         </div>
                         
                         <div class="col-12">
