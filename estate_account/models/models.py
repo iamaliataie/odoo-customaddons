@@ -25,7 +25,6 @@ class Property(models.Model):
         })
 
         self.invoice_id = invoice.id
-
         return super(Property, self).action_sold()
 
     def open_invoice(self):
