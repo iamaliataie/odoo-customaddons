@@ -3,3 +3,4 @@ access_realestate_property,realestate.property,model_realestate_property,,1,1,1,
 access_realestate_property_type,realestate.property_type,model_realestate_property_type,,1,1,1,1
 access_realestate_property_tag,realestate.property_tag,model_realestate_property_tag,,1,1,1,1
 access_realestate_property_offer,realestate.property_offer,model_realestate_property_offer,,1,1,1,1
+access_accept_reason_wizard,accept.reason.wizard,model_accept_reason_wizard,,1,1,1,1

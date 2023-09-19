@@ -15,8 +15,8 @@ class Property(models.Model):
     address = fields.Text(string='Address', help='Address')
     postcode =  fields.Char(string='Postcode')
     date_availability = fields.Date('availability')
-    expected_price = fields.Monetary()
-    selling_price = fields.Monetary()
+    expected_price = fields.Integer()
+    selling_price = fields.Integer()
     bedrooms = fields.Integer()
     living_area = fields.Integer()
     facades = fields.Integer()
@@ -42,7 +42,7 @@ class Property(models.Model):
     salesman = fields.Many2one('res.users', default=lambda self: self.env.user)
     buyer = fields.Many2one('res.partner', default='')
     offers_ids = fields.One2many('realestate.property.offer', 'property_id', string='Offer')
-    best_price = fields.Monetary(compute='_compute_best_price')
+    best_price = fields.Integer(compute='_compute_best_price')
     total_area = fields.Float(compute='_compute_total_area')
     sequence = fields.Integer()
     priority = fields.Selection([
@@ -171,11 +171,19 @@ class PropertyOffer(models.Model):
 
     def action_accepted(self):
         for rec in self:
-            rec.state = 'accepted'
-            rec.property_id.selling_price = rec.price
-            rec.property_id.best_price = rec.price
-            rec.property_id.state = 'offer_accepted'
-            rec.property_id.buyer = rec.partner_id.id
+            return {
+                'name': 'Reason',
+                'type': 'ir.actions.act_window',
+                'res_model': 'accept.reason.wizard',
+                'view_mode': 'form',
+                'target': 'new',
+            }
+        # for rec in self:
+        #     rec.state = 'accepted'
+        #     rec.property_id.selling_price = rec.price
+        #     rec.property_id.best_price = rec.price
+        #     rec.property_id.state = 'offer_accepted'
+        #     rec.property_id.buyer = rec.partner_id.id
 
     def action_refused(self):
         for rec in self:
