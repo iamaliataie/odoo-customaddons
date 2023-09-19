@@ -59,6 +59,18 @@
                     <t t-out="record.name.raw_value"/>
                   </h3>
                 </div>
+                <div>
+                  Expected Price: <strong><t t-out="record.expected_price.raw_value"/></strong>
+                </div>
+                <div>
+                  Best Price: <strong><t t-out="record.best_price.raw_value"/></strong>
+                </div>
+                <div>
+                  <strong><t t-out="record.selling_price.raw_value"/></strong>
+                </div>
+                <div>
+                  <field name="property_tags_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                </div>
               </div>
             </t>
         </templates>
