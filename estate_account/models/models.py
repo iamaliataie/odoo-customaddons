@@ -4,7 +4,7 @@ class Property(models.Model):
     _inherit = 'realestate.property'
 
     invoice_id = fields.Many2one('account.move')
-    currency_id = fields.Many2one('res.currency')
+    currency_id = fields.Many2one('res.currency', default=lambda self: self.env.company.currency_id)
 
     def action_sold(self):
         invoice = self.env['account.move'].create({

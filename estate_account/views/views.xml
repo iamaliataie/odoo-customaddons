@@ -11,6 +11,9 @@
             <!-- <field name="field_name" string="" widget="statinfo"/> -->
           </button>
         </xpath>
+        <xpath expr="//field[@name='expected_price']" position="before">
+          <field name="currency_id" />
+        </xpath>
       </field>
     </record>
 
