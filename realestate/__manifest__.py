@@ -32,8 +32,4 @@
         'views/res_user_view.xml',
         'wizards/accept_reason_view.xml',
     ],
-    # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
-    ],
 }
