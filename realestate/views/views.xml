@@ -54,33 +54,6 @@
           <templates>
             <t t-name="kanban-box">
                 <div t-attf-class="oe_kanban_global_click">
-                    <div class="row">
-                        <div class="col-12">
-                            <h2><field name="name"/></h2>
-                        </div>
-                        <div class="col-12">
-                            <strong><field name="expected_price"/></strong>
-                        </div>
-                        
-                        <div class="col-12">
-                            <hr/>
-                        </div>
-                        <div class="col-6">
-                            <strong>Postcode: <field name="postcode"/></strong>
-                        </div>
-                        <div class="col-6">
-                            <strong>Bedrooms: <field name="bedrooms"/></strong>
-                        </div>
-                        <div class="col-6">
-                            <strong>Living Area: <field name="living_area"/></strong>
-                        </div>
-                        <div class="col-6">
-                            <strong>Expencted Price: <field name="expected_price"/></strong>
-                        </div>
-                        <div class="col-12">
-                            <strong>Available From: <field name="date_availability"/></strong>
-                        </div>
-                    </div>
                 </div>
             </t>
         </templates>
