@@ -148,6 +148,7 @@ class PropertyOffer(models.Model):
         ('rejected', 'Rejected'),
     ], default='')
     property_type_id = fields.Many2one(related='property_id.property_type_id', store=True)
+    currency_id = fields.Many2one('res.currency')
 
 
     @api.model
@@ -158,6 +159,7 @@ class PropertyOffer(models.Model):
         elif values.get('price') <= property.best_price:
             raise ValidationError(f'Only offers greater than {property.best_price} are accepted')
         property.state = 'offer_received'
+        values['currency_id'] = property.currency_id.id
         return super(PropertyOffer, self).create(values)
 
     @api.depends('validity', 'create_date')

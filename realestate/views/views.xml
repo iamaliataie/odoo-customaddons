@@ -254,6 +254,7 @@
                 <field name="property_id" attrs="{'readonly': [('state','=', 'accepted')]}" />
                 <field name="price" attrs="{'readonly': [('state','=', 'accepted')]}" />
                 <field name="deadline_date" attrs="{'readonly': [('state','=', 'accepted')]}" />
+                <field name="currency_id" />
               </group>
               <group>
                 <field name="partner_id" attrs="{'readonly': [('state','=', 'accepted')]}" widget="many2one_avatar" />
