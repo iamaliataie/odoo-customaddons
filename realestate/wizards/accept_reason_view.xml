@@ -15,6 +15,9 @@
                             <field name="date" />
                         </group>
                     </group>
+                    <footer>
+                        <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z" />
+                    </footer>
                 </sheet>
             </form>
         </field>

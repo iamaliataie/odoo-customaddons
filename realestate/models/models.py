@@ -178,7 +178,7 @@ class PropertyOffer(models.Model):
                 'res_model': 'accept.reason.wizard',
                 'view_mode': 'form',
                 'target': 'new',
-                'context': {'default_property_id': rec.property_id.id, 'default_offer_id': rec.offer_id.id}
+                'context': {'default_property_id': rec.property_id.id, 'default_offer_id': rec.id}
             }
         # for rec in self:
         #     rec.state = 'accepted'

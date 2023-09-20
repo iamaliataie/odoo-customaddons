@@ -28,7 +28,6 @@
     'data': [
         'security/ir.model.access.csv',
         'views/views.xml',
-        'views/templates.xml',
         'views/res_user_view.xml',
         'wizards/accept_reason_view.xml',
     ],
