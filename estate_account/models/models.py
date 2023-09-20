@@ -6,11 +6,9 @@ class Property(models.Model):
     invoice_id = fields.Many2one('account.move')
     currency_id = fields.Many2one('res.currency', default=lambda self: self.env.company.currency_id)
     invoice_amount = fields.Monetary(compute='_compute_invoice_amount')
-
     expected_price = fields.Monetary()
     selling_price = fields.Monetary()
     best_price = fields.Monetary(compute='_compute_best_price')
-
 
     @api.depends('invoice_id')
     def _compute_invoice_amount(self):
@@ -18,7 +16,6 @@ class Property(models.Model):
             rec.invoice_amount = 0
             if rec.invoice_id:
                 rec.invoice_amount = rec.invoice_id.amount_total
-
 
     def action_sold(self):
         invoice = self.env['account.move'].create({
@@ -41,7 +38,6 @@ class Property(models.Model):
                 })
             ]
         })
-
         self.invoice_id = invoice.id
         return super(Property, self).action_sold()
 
