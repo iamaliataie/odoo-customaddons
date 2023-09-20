@@ -23,14 +23,16 @@ class Property(models.Model):
             'property_id': self.id,
             'invoice_line_ids': [
                 Command.create({
-                    'name': f'6% of the selling price',
+                    'name': f'6% of {self.name}({self.selling_price})',
                     'quantity': 1,
-                    'price_unit': self.selling_price * 0.06
+                    'price_unit': self.selling_price * 0.06,
+                    'tax_ids': [(5,0,0)],
                 }),
                 Command.create({
                     'name': 'Administrative fees',
                     'quantity': 1,
-                    'price_unit': 100
+                    'price_unit': 100,
+                    'tax_ids': [(5,0,0)],
                 })
             ]
         })
