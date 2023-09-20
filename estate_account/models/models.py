@@ -5,6 +5,15 @@ class Property(models.Model):
 
     invoice_id = fields.Many2one('account.move')
     currency_id = fields.Many2one('res.currency', default=lambda self: self.env.company.currency_id)
+    invoice_amount = fields.Monetary(compute='_compute_invoice_amount')
+
+
+    @api.depends('invoice_id')
+    def _compute_invoice_amount(self):
+        for rec in self:
+            if rec.invoice_id:
+                rec.invoice_amount = rec.invoice_id.amount_total
+
 
     def action_sold(self):
         invoice = self.env['account.move'].create({
