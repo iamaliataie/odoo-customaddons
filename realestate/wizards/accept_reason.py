@@ -6,6 +6,7 @@ class AcceptReasonWizard(models.TransientModel):
 
     reason = fields.Text()
     property_id = fields.Many2one('realestate.property')
+    offer_id = fields.Many2one('realestate.property.offer')
     date = fields.Date(default=fields.Date.context_today)
 
     
