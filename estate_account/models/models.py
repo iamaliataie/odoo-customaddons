@@ -1,4 +1,4 @@
-from odoo import models, fields, Command
+from odoo import models, fields, Command, api
 
 class Property(models.Model):
     _inherit = 'realestate.property'
@@ -11,6 +11,7 @@ class Property(models.Model):
     @api.depends('invoice_id')
     def _compute_invoice_amount(self):
         for rec in self:
+            rec.invoice_amount = 0
             if rec.invoice_id:
                 rec.invoice_amount = rec.invoice_id.amount_total
 
