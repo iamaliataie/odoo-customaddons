@@ -137,7 +137,8 @@ class PropertyOffer(models.Model):
 
     property_id = fields.Many2one('realestate.property', string='Property', ondelete='cascade')
     partner_id = fields.Many2one('res.partner', string='Partner')
-    price = fields.Float(string='Price', default=0)
+    price = fields.Monetary(string='Price', default=0)
+    currency_id = fields.Many2one('res.currency')
     validity = fields.Integer()
     deadline_date = fields.Date(compute='_compute_deadline_date', inverse='_inverse_deadline_date')
     state = fields.Selection([
