@@ -7,6 +7,10 @@ class Property(models.Model):
     currency_id = fields.Many2one('res.currency', default=lambda self: self.env.company.currency_id)
     invoice_amount = fields.Monetary(compute='_compute_invoice_amount')
 
+    expected_price = fields.Monetary()
+    selling_price = fields.Monetary()
+    best_price = fields.Monetary(compute='_compute_best_price')
+
 
     @api.depends('invoice_id')
     def _compute_invoice_amount(self):
