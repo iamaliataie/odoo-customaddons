@@ -16,6 +16,7 @@
                         </group>
                     </group>
                     <footer>
+                        <button string="Save" class="btn btn-primary" type="object" name="action_accept" />
                         <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z" />
                     </footer>
                 </sheet>
