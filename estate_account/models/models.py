@@ -21,6 +21,7 @@ class Property(models.Model):
             'partner_id': self.buyer.id,
             'move_type': 'out_invoice',
             'property_id': self.id,
+            'currency_id': self.currency_id.id,
             'invoice_line_ids': [
                 Command.create({
                     'name': f'6% of {self.name}({self.selling_price})',
