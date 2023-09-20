@@ -52,6 +52,8 @@ class Property(models.Model):
         ('3', 'Very Hight'),
     ])
 
+    accept_reason = fields.Text()
+
     # image = fields.Image(string='Image')
 
     _sql_constraints = [
