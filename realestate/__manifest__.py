@@ -30,5 +30,6 @@
         'views/views.xml',
         'views/res_user_view.xml',
         'wizards/accept_reason_view.xml',
+        'data/data_sequence.xml',
     ],
 }
