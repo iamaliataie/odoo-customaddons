@@ -91,12 +91,20 @@
             <field name="state"  widget="statusbar"  options="{'clickable': '1'}"/>
           </header>
           <sheet>
+
             <div class="oe_button_box" name="button_box"></div>
             <!-- <field name="image" string="Property Title" widget="image" class="oe_avatar" /> -->
+            <div class="oe_title">
+
+            </div>
             <div class="oe_title">
               <h2>
                 <field name="priority" widget="priority" />
               </h2>
+
+              <lable for="ref" class="oe_edit_only">Reference No.</lable>
+              <h3 class="mb-3"><field name="ref" string="Reference No."/></h3>
+
               <label for="name" class="oe_edit_only">Title</label>
               <h1>
                 <field name="name" />
@@ -105,7 +113,6 @@
             
             <group>
               <group>
-                <field name="ref" string="Reference No."/>
                 <field name="property_tags_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                 <field name="property_type_id" />
                 <field name="postcode" />
