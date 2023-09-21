@@ -55,7 +55,7 @@ class Property(models.Model):
 
     accept_reason = fields.Text()
 
-    # image = fields.Image(string='Image')
+    image = fields.Image(string='Image')
 
     _sql_constraints = [
         ('positive_expected_price', 'CHECK(expected_price > 0)', 'Expected price must be greater than 0'),
