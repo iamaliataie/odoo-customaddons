@@ -51,13 +51,18 @@
           <field name="best_price" />
           <field name="selling_price" />
           <field name="state" />
+          <field name="image" />
           <templates>
             <t t-name="kanban-box" >
               <div t-attf-class="oe_kanban_global_click mb16">
+
+                <div class="">
+                  <div class="o_kanban_image mr16">
+                    <field name="image" widget="image" />
+                  </div>
+                </div>
                 <div>
-                  <h3>
-                    <t t-out="record.name.raw_value"/>
-                  </h3>
+                  Property: <strong><t t-out="record.name.raw_value"/></strong>
                 </div>
                 <div>
                   Expected Price: <strong><t t-out="record.expected_price.raw_value"/></strong>
