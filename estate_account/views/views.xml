@@ -1,6 +1,7 @@
 <odoo>
   <data>
 
+    <!-- realestate property form -->
     <record id="property_view_form_realestate_inherit" model="ir.ui.view">
       <field name="name">realestate.property.view.form.inherit</field>
       <field name="model">realestate.property</field>
@@ -17,6 +18,8 @@
       </field>
     </record>
 
+
+    <!-- account move form -->
     <record id="view_move_form_account_inherit" model="ir.ui.view">
       <field name="name">account.move.view.form.inherit</field>
       <field name="model">account.move</field>
