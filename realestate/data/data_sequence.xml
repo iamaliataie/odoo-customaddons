@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Sequences for property -->
+        <record id="realestate_property_ir_sequence" model="ir.sequence">
+            <field name="name">Property Sequence</field>
+            <field name="code">realestate.property.sequence</field>
+            <field name="prefix">PS/%(year)s/%(month)s/</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+    </data>
+</odoo>
