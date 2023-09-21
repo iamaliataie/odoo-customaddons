@@ -30,3 +30,4 @@
         'views/views.xml',
         'views/templates.xml',
     ],
+}
