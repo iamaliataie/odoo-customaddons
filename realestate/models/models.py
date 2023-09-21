@@ -187,12 +187,6 @@ class PropertyOffer(models.Model):
                 'target': 'new',
                 'context': {'default_property_id': rec.property_id.id, 'default_offer_id': rec.id}
             }
-        # for rec in self:
-        #     rec.state = 'accepted'
-        #     rec.property_id.selling_price = rec.price
-        #     rec.property_id.best_price = rec.price
-        #     rec.property_id.state = 'offer_accepted'
-        #     rec.property_id.buyer = rec.partner_id.id
 
     def action_refused(self):
         for rec in self:
