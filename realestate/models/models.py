@@ -59,12 +59,10 @@ class Property(models.Model):
         ('positive_expected_price', 'CHECK(expected_price > 0)', 'Expected price must be greater than 0'),
     ]
 
-
     @api.model
     def create(self, values):
         values['ref'] = self.env['ir.sequence'].next_by_code('realestate.property.sequence')
         return super().create(values)
-
 
     @api.depends('offers_ids')
     def _compute_best_price(self):
