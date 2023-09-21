@@ -10,6 +10,7 @@ class Property(models.Model):
     _description = 'realestate.property'
     _order = 'sequence, priority, name'
 
+    ref = fields.Char(readonly=True, default='New')
     name = fields.Char(string='Title')
     description = fields.Text(string='Description', help='Property Description')
     address = fields.Text(string='Address', help='Address')
