@@ -68,14 +68,6 @@ class Property(models.Model):
         return super().create(values)
 
 
-    # def write(self, values):
-    #     res = super().write(values)
-    #     print(res)
-    #     if res['ref'] == False:
-    #         res['ref'] = self.env['ir.sequence'].next_by_code('realestate.property.sequence')
-    #     return res
-
-
     @api.depends('offers_ids')
     def _compute_best_price(self):
         for property in self:
