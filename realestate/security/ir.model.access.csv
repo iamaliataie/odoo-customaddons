@@ -1,7 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_realestate_property_user,realestate.property.user,model_realestate_property,realestate.group_estate_user,1,1,1,0
 access_realestate_property_admin,realestate.property.admin,model_realestate_property,realestate.group_estate_admin,1,1,1,1
-access_realestate_property_type,realestate.property_type,model_realestate_property_type,,1,1,1,1
-access_realestate_property_tag,realestate.property_tag,model_realestate_property_tag,,1,1,1,1
-access_realestate_property_offer,realestate.property_offer,model_realestate_property_offer,,1,1,1,1
+access_realestate_property_type_admin,realestate.property_type_admin,model_realestate_property_type,realestate.group_estate_admin,1,1,1,1
+access_realestate_property_tag_admin,realestate.property_tag_admin,model_realestate_property_tag,realestate.group_estate_admin,1,1,1,1
+access_realestate_property_user,realestate.property.user,model_realestate_property,realestate.group_estate_user,1,1,1,0
+access_realestate_property_tag_user,realestate.property_tag_user,model_realestate_property_tag,realestate.group_estate_user,1,0,0,0
+access_realestate_property_offer_user,realestate.property_offer_user,model_realestate_property_offer,realestate.group_estate_user,1,0,0,0
 access_accept_reason_wizard,accept.reason.wizard,model_accept_reason_wizard,,1,1,1,1
