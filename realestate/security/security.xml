@@ -18,6 +18,16 @@
             <field name="implied_ids" eval="[(4, ref('realestate.group_estate_user'))]" />
         </record>
 
+        <record id="estate_user_rule" model="ir.rule">
+            <field name="name">User can see record that have created by him</field>
+            <field name="model_id" ref="realestate.model_realestate_property" />
+            <field name="groups" eval="[(4, ref('realestate.group_estate_user'))]" />
+            <field name="domain_force" >[('create_uid', 'in', [user.id])]</field>
+            <field name="perm_create" eval="True" />
+            <field name="perm_read" eval="True" />
+            <field name="perm_write" eval="True" />
+            <field name="perm_unlink" eval="False" />
+        </record>
+
     </data>
-    
 </odoo>
