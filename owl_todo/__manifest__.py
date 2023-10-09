@@ -34,4 +34,9 @@
     ],
     'application': True,
     'sequence': -1000,
+    'assets': {
+        'web.assets_backend':[
+            
+        ]
+    }
 }
