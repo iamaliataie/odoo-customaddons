@@ -42,10 +42,20 @@ export class OwlTodoList extends Component {
         await this.getAllTask()
     }
 
+    addTask() {
+        this.resetForm()
+        this.state.activeId = null
+        this.state.isEditable = false
+    }
+
     editTask(task) {
         this.state.isEditable = true
         this.state.activeId = task.id
         this.state.task = {...task}
+    }
+
+    resetForm() {
+        this.state.task = {name: "", color: "#000", completed: false}
     }
 }
 
