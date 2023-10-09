@@ -39,8 +39,11 @@
     </record>
 
     <!-- Menu -->
-    <menuitem id="owl_todo_list_main_menu" sequence="10"
+    <menuitem 
+    id="owl_todo_list_main_menu"
+    name="Todo App" 
     web_icon="owl_todo,static/description/icon.png"
+    sequence="10"
     >
       <menuitem
         id="ow_todo_list_menu"
