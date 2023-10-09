@@ -14,5 +14,23 @@
       </field>
     </record>
 
+    <!-- Form View -->
+    <record id="owl_todo_list_view_form" model="ir.ui.view">
+      <field name="name">owl.todo.list.view.form</field>
+      <field name="model">owl.todo.list</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group>
+              <field name="name" />
+              <field name="color" widget="color" />
+              <field name="completed" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
   </data>
 </odoo>
