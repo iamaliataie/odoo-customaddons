@@ -38,5 +38,14 @@
       <field name="view_mode">tree,form</field>
     </record>
 
+    <!-- Menu -->
+    <menuitem id="owl_todo_list_main_menu" sequence="10">
+      <menuitem
+        id="ow_todo_list_menu"
+        name="Todo List"
+        action="owl_todo_list_action"
+        sequence="10"/>
+    </menuitem>
+
   </data>
 </odoo>
