@@ -1,60 +1,18 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="owl_todo.list">
-      <field name="name">owl_todo list</field>
-      <field name="model">owl_todo.owl_todo</field>
+
+    <!-- Tree View -->
+    <record id="owl_todo_list_view_tree" model="ir.ui.view">
+      <field name="name">owl.todo.list.view.tree</field>
+      <field name="model">owl.todo.list</field>
       <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+        <tree string="">
+          <field name="name" />
+          <field name="color" widget="color" />
+          <field name="completed" />
         </tree>
       </field>
     </record>
--->
 
-    <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="owl_todo.action_window">
-      <field name="name">owl_todo window</field>
-      <field name="res_model">owl_todo.owl_todo</field>
-      <field name="view_mode">tree,form</field>
-    </record>
--->
-
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="owl_todo.action_server">
-      <field name="name">owl_todo server</field>
-      <field name="model_id" ref="model_owl_todo_owl_todo"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
-
-    <!-- Top menu item -->
-<!--
-    <menuitem name="owl_todo" id="owl_todo.menu_root"/>
--->
-    <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="owl_todo.menu_1" parent="owl_todo.menu_root"/>
-    <menuitem name="Menu 2" id="owl_todo.menu_2" parent="owl_todo.menu_root"/>
--->
-    <!-- actions -->
-<!--
-    <menuitem name="List" id="owl_todo.menu_1_list" parent="owl_todo.menu_1"
-              action="owl_todo.action_window"/>
-    <menuitem name="Server to list" id="owl_todo" parent="owl_todo.menu_2"
-              action="owl_todo.action_server"/>
--->
   </data>
 </odoo>
