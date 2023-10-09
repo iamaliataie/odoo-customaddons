@@ -8,16 +8,32 @@ export class OwlTodoList extends Component {
     setup(){
         this.state = useState(
             {
+                task: {
+                    name: "",
+                    color: "#000",
+                    completed: false,
+                },
                 taskList: [],
             }
         )
         this.orm = useService("orm")
+        this.model = "owl.todo.list"
 
         onWillStart(async () => {
-            this.state.taskList = await this.orm.searchRead("owl.todo.list", [], ["name", "color", "completed"])
+            await this.getAllTask()
         })
+
     }
 
+    async getAllTask () {
+        this.state.taskList = await this.orm.searchRead(this.model, [], ["name","color","completed"])
+    }
+
+    async saveTask() {
+        console.log('saaving task...');
+        await this.orm.create(this.model, [this.state.task])
+        await this.getAllTask()
+    }
 }
 
 OwlTodoList.template = 'owl.TodoList'
