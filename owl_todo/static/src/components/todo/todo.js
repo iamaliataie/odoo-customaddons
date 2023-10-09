@@ -14,6 +14,8 @@ export class OwlTodoList extends Component {
                     completed: false,
                 },
                 taskList: [],
+                isEditable: false,
+                activeId: null,
             }
         )
         this.orm = useService("orm")
@@ -30,9 +32,20 @@ export class OwlTodoList extends Component {
     }
 
     async saveTask() {
-        console.log('saaving task...');
-        await this.orm.create(this.model, [this.state.task])
+        if (this.state.isEditable){
+            await this.orm.write(this.model, [this.state.activeId], this.state.task)
+        }
+        else {
+            await this.orm.create(this.model, [this.state.task])
+        }
+
         await this.getAllTask()
+    }
+
+    editTask(task) {
+        this.state.isEditable = true
+        this.state.activeId = task.id
+        this.state.task = {...task}
     }
 }
 
