@@ -31,6 +31,12 @@
       </field>
     </record>
 
+    <!-- Action -->
+    <record id="owl_todo_list_action" model="ir.actions.act_window">
+      <field name="name">Todo List</field>
+      <field name="res_model">owl.todo.list</field>
+      <field name="view_mode">tree,form</field>
+    </record>
 
   </data>
 </odoo>
