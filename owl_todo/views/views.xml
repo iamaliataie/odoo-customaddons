@@ -39,7 +39,9 @@
     </record>
 
     <!-- Menu -->
-    <menuitem id="owl_todo_list_main_menu" sequence="10">
+    <menuitem id="owl_todo_list_main_menu" sequence="10"
+    web_icon="owl_todo,static/description/icon.png"
+    >
       <menuitem
         id="ow_todo_list_menu"
         name="Todo List"
