@@ -31,7 +31,9 @@
     'sequence': -1000,
     'assets': {
         'web.assets_backend':[
-            
+            'owl_todo/static/src/components/*/*.js',
+            'owl_todo/static/src/components/*/*.xml',
+            'owl_todo/static/src/components/*/*.scss',
         ]
     }
 }
