@@ -8,8 +8,8 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="input-group">
-                        <input type="text" class="form-control"/>
-                        <button class="btn btn-outline-primary">Search</button>
+                        <input type="text" class="form-control" t-ref="search-input" t-on-keyup="searchTask"/>
+                        <button class="btn btn-outline-primary" t-on-click="searchTask">Search</button>
                     </div>
                 </div>
             </div>
