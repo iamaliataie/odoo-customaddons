@@ -25,7 +25,6 @@ export class OwlTodoList extends Component {
         onWillStart(async () => {
             await this.getAllTask()
         })
-
     }
 
     async getAllTask () {
