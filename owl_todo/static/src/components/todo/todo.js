@@ -66,6 +66,11 @@ export class OwlTodoList extends Component {
         this.state.taskList = await this.orm.searchRead(this.model, [["name", "ilike", text]], ["name", "color", "completed"])
     }
 
+    async toggleStatus(e, task) {
+        await this.orm.write(this.model, [task.id], {completed: e.target.checked})
+        await this.getAllTask()
+    }
+
     resetForm() {
         this.state.task = {name: "", color: "#000", completed: false}
     }
