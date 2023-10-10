@@ -33,7 +33,7 @@
                         </div>
                     </td>
                     <td>
-                        <input type="color" class="form-control form-control-color" id="exampleColorInput" t-att-value="task.color" title="Choose your color" />
+                        <input type="color" class="form-control form-control-color" id="exampleColorInput" t-att-value="task.color" title="Choose your color" t-on-change="(e)=>this.toggleColor(e, task)"/>
                     </td>
                     <td>
                         <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" t-on-click="()=>this.editTask(task)">Edit</button>
