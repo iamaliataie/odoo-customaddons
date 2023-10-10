@@ -81,5 +81,4 @@ export class OwlTodoList extends Component {
 }
 
 OwlTodoList.template = 'owl.TodoList'
-
 registry.category('actions').add('owl.action_todo_list_js', OwlTodoList);
