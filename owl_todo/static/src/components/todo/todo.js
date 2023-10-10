@@ -10,7 +10,7 @@ export class OwlTodoList extends Component {
             {
                 task: {
                     name: "",
-                    color: "#000",
+                    color: "#00000",
                     completed: false,
                 },
                 taskList: [],
@@ -63,7 +63,7 @@ export class OwlTodoList extends Component {
 
     async searchTask() {
         const text = this.searchInput.el.value
-        console.log(text);
+        this.state.taskList = await this.orm.searchRead(this.model, [["name", "ilike", text]], ["name", "color", "completed"])
     }
 
     resetForm() {
