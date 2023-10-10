@@ -54,6 +54,12 @@ export class OwlTodoList extends Component {
         this.state.task = {...task}
     }
 
+    async deleteTask(task) {
+        await this.orm.unlink(this.model, [task.id])
+        await this.getAllTask()
+
+    }
+
     resetForm() {
         this.state.task = {name: "", color: "#000", completed: false}
     }
