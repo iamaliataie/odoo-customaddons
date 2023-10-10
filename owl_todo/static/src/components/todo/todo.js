@@ -71,6 +71,11 @@ export class OwlTodoList extends Component {
         await this.getAllTask()
     }
 
+    async toggleColor(e, task) {
+        await this.orm.write(this.model, [task.id], {completed: e.target.value})
+        await this.getAllTask()
+    }
+
     resetForm() {
         this.state.task = {name: "", color: "#000", completed: false}
     }
